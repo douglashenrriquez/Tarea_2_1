@@ -1,0 +1,31 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea_2_1.MainPage">
+
+    <StackLayout>
+        <Picker x:Name="RegionComboBox" Title="Selecciona una región">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Africa</x:String>
+                    <x:String>Americas</x:String>
+                    <x:String>Asia</x:String>
+                    <x:String>Europe</x:String>
+                    <x:String>Oceania</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <ListView x:Name="PaisesListView" ItemTapped="OnPaisTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Bandera}" WidthRequest="50" HeightRequest="30" />
+                            <Label Text="{Binding Nombre}" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

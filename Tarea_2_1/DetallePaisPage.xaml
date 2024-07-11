@@ -1,0 +1,44 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             x:Class="Tarea_2_1.DetallePaisPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="DarkSlateGreyColor">#2F4F4F</Color>
+            <Style x:Key="SectionLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+            <Style x:Key="ValueLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10" Spacing="10">
+        <Label Text="{Binding Nombre}" FontSize="Large" HorizontalOptions="Center" />
+        <Image Source="{Binding Bandera}" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" />
+
+        <Label Text="Población:" Style="{StaticResource SectionLabelStyle}" />
+        <Label Text="{Binding Poblacion}" Style="{StaticResource ValueLabelStyle}" />
+
+        <Label Text="Región:" Style="{StaticResource SectionLabelStyle}" />
+        <Label Text="{Binding Region}" Style="{StaticResource ValueLabelStyle}" />
+
+        <Label Text="Subregión:" Style="{StaticResource SectionLabelStyle}" />
+        <Label Text="{Binding Subregion}" Style="{StaticResource ValueLabelStyle}" />
+
+        <Label Text="Idiomas:" Style="{StaticResource SectionLabelStyle}" />
+        <Label Text="{Binding IdiomasAsString}" Style="{StaticResource ValueLabelStyle}" />
+
+        <Label Text="Monedas:" Style="{StaticResource SectionLabelStyle}" />
+        <Label Text="{Binding MonedasAsString}" Style="{StaticResource ValueLabelStyle}" />
+
+        <maps:Map x:Name="PaisMap" HeightRequest="250" VerticalOptions="FillAndExpand" />
+    </StackLayout>
+</ContentPage>
